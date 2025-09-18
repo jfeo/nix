@@ -2,7 +2,6 @@
   config,
   inputs,
   pkgs,
-  hyprland,
   ...
 }:
 
@@ -20,7 +19,6 @@
     packages = [
       pkgs.wget
       pkgs.curl
-      pkgs.rofi
     ];
 
     file."${config.xdg.configHome}" = {
@@ -36,9 +34,8 @@
   wayland.windowManager.hyprland = {
     enable = true;
     # set the flake package
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage =
-      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    package = null;
+    portalPackage = null;
   };
 
   programs.firefox.enable = true;
@@ -50,6 +47,11 @@
       font.normal.family = "Berkeley Mono Nerd Font";
     };
   };
+
+  programs.kitty.enable = true; # for default hyprland setup
+  programs.rofi.enable = true;
+  programs.wofi.enable = true;
+  programs.waybar.enable = true;
 
   programs.git = {
     enable = true;
