@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   pkgs,
   ...
@@ -25,9 +26,13 @@
     packages = [
       pkgs.wget
       pkgs.curl
+      pkgs.rofi
     ];
 
-    file = { };
+    file."${config.xdg.configHome}" = {
+      source = ./dotfiles;
+      recursive = true;
+    };
 
     sessionVariables = {
       EDITOR = "vim";
