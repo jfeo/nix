@@ -2,6 +2,7 @@
   config,
   inputs,
   pkgs,
+  hyprland,
   ...
 }:
 
@@ -11,14 +12,7 @@
   ];
 
   home = {
-    # This value determines the Home Manager release that your configuration is
-    # compatible with. This helps avoid breakage when a new Home Manager release
-    # introduces backwards incompatible changes.
-    #
-    # You should not change this value, even if you update Home Manager. If you do
-    # want to update the value, then make sure to first check the Home Manager
-    # release notes.
-    stateVersion = "25.05"; # Please read the comment before changing.
+    stateVersion = "25.05"; # Do not change without ensuring compatibility
 
     username = "feo";
     homeDirectory = "/home/feo";
@@ -37,6 +31,14 @@
     sessionVariables = {
       EDITOR = "vim";
     };
+  };
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+    # set the flake package
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
   programs.firefox.enable = true;

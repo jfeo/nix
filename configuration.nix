@@ -49,9 +49,6 @@
   services.desktopManager.plasma6.enable = true;
   services.xserver.enable = true;
 
-  # hyprland environment
-  programs.hyprland.enable = true;
-
   # sound
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -72,14 +69,6 @@
       "networkmanager"
       "wheel"
     ];
-  };
-
-  home-manager = {
-    # also pass inputs to home-manager modules
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "feo" = import ./home.nix;
-    };
   };
 
   # List packages installed in system profile. To search, run:
