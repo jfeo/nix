@@ -32,13 +32,5 @@
           inputs.home-manager.nixosModules.default
         ];
       };
-
-      homeConfigurations."feo@taenknix" = home-manager.lib.homeManagerConfiguration {
-        extraSpecialArgs = { inherit inputs; };
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [
-          ./home.nix
-        ];
-      };
     };
 }
