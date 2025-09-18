@@ -1,0 +1,108 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Berkeley Mono Nerd Font, monospace;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+  background: none;
+  border: none;
+}
+
+.modules-left, .modules-center, .modules-right {
+  border-radius: 5px;
+  margin: 5px;
+  border: 2px solid white;
+}
+
+.module {
+  padding: 0 10px;
+  color: white;
+}
+
+#battery {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#battery.charging, #battery.plugged {
+    color: #ffffff;
+    background-color: #26A65B;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#tray {
+  background-color: gray;
+}
+
+#custom-notification {
+  color: white;
+}
+
+#expand {
+  color: white;
+}
+
+#expand > *:not(last-child) {
+  margin-right: 10px;
+}
+
+#clock {
+}
+
+#power-profiles-daemon {
+  color: white;
+}
+
+#power-profiles-daemon.power-saver {
+  background-color: #26a65b;
+}
+
+#power-profiles-daemon.performance {
+  background-color: #e8d824;
+}
+
+#power-profiles-daemon.balanced {
+  background-color: #7986a7; 
+}
+
+#workspaces {
+  padding: 0;
+}
+
+#workspaces button {
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+#workspaces button.active {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+#workspaces button.urgent {
+  color: red;
+  font-weight: bold;
+}

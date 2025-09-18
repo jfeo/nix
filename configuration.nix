@@ -64,7 +64,9 @@
     pulse.enable = true;
   };
 
-  # printing
+  # other
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
   services.printing.enable = true;
 
   users.users.feo = {
@@ -77,13 +79,21 @@
   };
 
   home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
     users.feo = import ./home.nix;
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [ kitty ];
+  environment.systemPackages = with pkgs; [
+    killall
+    wget
+    curl
+    btop
+    htop
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
