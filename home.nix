@@ -35,13 +35,7 @@
     };
   };
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    # package defined in flake.nix
-    package = null;
-    portalPackage = null;
-  };
-
+  wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     input.kb_layout = "dk";
