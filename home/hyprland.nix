@@ -12,6 +12,7 @@
 
       monitor = [
         ",prefered,auto,1"
+        "desc:Dell Inc. DELL P2416D 07C536BP0FPL,preferred,auto-left,1" # office monitor to the left
       ];
 
       xwayland = {
