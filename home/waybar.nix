@@ -38,21 +38,25 @@
         };
       };
 
-      "power-profiles-daemon" = {
+      "hyprland/window" = {
+        separate-outputs = true;
+      };
+
+      power-profiles-daemon = {
         default = "";
         performance = "";
         balanced = "";
-        "power-saver" = "";
+        power-saver = "";
       };
 
       pulseaudio = {
         format = "<span foreground='#cc241d'>{icon}</span> {volume}%  {format_source}";
-        "format-bluetooth" = "<span foreground='#b16286'>{icon}</span> {volume}%  {format_source}";
-        "format-bluetooth-muted" = "<span foreground='#D699B6'>󰖁</span>  {format_source}";
-        "format-muted" = "<span foreground='#7A8478'>󰖁</span> {format_source}";
-        "format-source" = "<span foreground='#E67E80'></span> {volume}%";
-        "format-source-muted" = "<span foreground='#F38BA8'></span>";
-        "format-icons" = {
+        format-bluetooth = "<span foreground='#b16286'>{icon}</span> {volume}%  {format_source}";
+        format-bluetooth-muted = "<span foreground='#D699B6'>󰖁</span> {format_source}";
+        format-muted = "<span foreground='#7A8478'>󰖁</span> {format_source}";
+        format-source = "<span foreground='#E67E80'></span> {volume}%";
+        format-source-muted = "<span foreground='#F38BA8'></span>";
+        format-icons = {
           headphone = "";
           phone = "";
           portable = "";

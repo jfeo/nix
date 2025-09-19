@@ -1,9 +1,9 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Berkeley Mono Nerd Font, monospace;
-    font-size: 14px;
-    margin: 0;
-    padding: 0;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: Berkeley Mono Nerd Font, monospace;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
 }
 
 window#waybar {
@@ -11,7 +11,9 @@ window#waybar {
   border: none;
 }
 
-.modules-left, .modules-center, .modules-right {
+.modules-left,
+.modules-center,
+.modules-right {
   border-radius: 5px;
   margin: 5px;
   border: 2px solid white;
@@ -23,31 +25,32 @@ window#waybar {
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+  background-color: #ffffff;
+  color: #000000;
 }
 
-#battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+#battery.charging,
+#battery.plugged {
+  color: #ffffff;
+  background-color: #26A65B;
 }
 
 @keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #tray {
@@ -62,12 +65,11 @@ window#waybar {
   color: white;
 }
 
-#expand > *:not(last-child) {
+#expand>*:not(last-child) {
   margin-right: 10px;
 }
 
-#clock {
-}
+#clock {}
 
 #power-profiles-daemon {
   color: white;
@@ -82,7 +84,7 @@ window#waybar {
 }
 
 #power-profiles-daemon.balanced {
-  background-color: #7986a7; 
+  background-color: #7986a7;
 }
 
 #workspaces {
@@ -94,6 +96,16 @@ window#waybar {
   padding: 0;
   margin: 0;
   color: white;
+}
+
+#workspaces button.empty {
+  color: grey;
+}
+
+#workspaces button.visible {
+  background-color: grey;
+  color: black;
+  font-weight: bold;
 }
 
 #workspaces button.active {
