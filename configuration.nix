@@ -16,7 +16,18 @@
     "flakes"
   ];
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.packageOverrides = pkgs: {
+    berkeley-mono-nerd-font = pkgs.callPackage ./fonts/berkeley-mono-nerd-font.nix { };
+  };
   nix.settings.download-buffer-size = 1073741824;
+
+  fonts = {
+    packages = with pkgs; [
+      berkeley-mono-nerd-font
+      liberation_ttf
+      noto-fonts
+    ];
+  };
 
   # bootloader
   boot.loader.systemd-boot.enable = true;
@@ -93,6 +104,10 @@
     curl
     btop
     htop
+    unzip
+    zip
+    noto-fonts
+    liberation_ttf
   ];
 
   # This value determines the NixOS release from which the default
