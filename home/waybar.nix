@@ -18,8 +18,9 @@
       modules-right = [
         "group/expand"
         "tray"
+        "pulseaudio#audio"
+        "pulseaudio#source"
         "battery"
-        "pulseaudio"
         "power-profiles-daemon"
         "clock"
         "custom/notification"
@@ -43,19 +44,20 @@
       };
 
       power-profiles-daemon = {
-        default = "";
-        performance = "";
-        balanced = "";
-        power-saver = "";
+        format = "{icon}";
+        tooltip-format = "Power profile: {profile}\nDriver: {driver}";
+        tooltip = true;
+        format-icons = {
+          default = "";
+          performance = "";
+          balanced = "";
+          power-saver = "";
+        };
       };
 
-      pulseaudio = {
-        format = "<span foreground='#cc241d'>{icon}</span> {volume}%  {format_source}";
-        format-bluetooth = "<span foreground='#b16286'>{icon}</span> {volume}%  {format_source}";
-        format-bluetooth-muted = "<span foreground='#D699B6'>󰖁</span> {format_source}";
-        format-muted = "<span foreground='#7A8478'>󰖁</span> {format_source}";
-        format-source = "<span foreground='#E67E80'></span> {volume}%";
-        format-source-muted = "<span foreground='#F38BA8'></span>";
+      "pulseaudio#audio" = {
+        format = "{icon}   {volume}%";
+        format-muted = "󰝟";
         format-icons = {
           headphone = "";
           phone = "";
@@ -70,6 +72,12 @@
         input = true;
       };
 
+      "pulseaudio#source" = {
+        format = "{format_source}";
+        format-source = " {volume}%";
+        format-source-muted = "";
+      };
+
       "custom/notification" = {
         tooltip = false;
         format = "";
@@ -78,7 +86,7 @@
       };
 
       clock = {
-        format = "{:%I:%M:%S %p} ";
+        format = "{:%H:%M:%S} ";
         interval = 1;
         tooltip-format = "<tt>{calendar}</tt>";
         calendar = {

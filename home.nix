@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   pkgs,
   ...
@@ -7,6 +8,7 @@
 {
   imports = [
     inputs.nvf.homeManagerModules.default
+    inputs.catppuccin.homeModules.catppuccin
     ./home
   ];
 
@@ -30,11 +32,47 @@
       playerctl
       brightnessctl
       pavucontrol
+      wev
+      nwg-look
+      catppuccin-gtk
     ];
 
     sessionVariables = {
       EDITOR = "vim";
     };
+  };
+
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+    accent = "mauve";
+    kvantum.enable = true;
+  };
+
+  gtk = {
+    enable = true;
+
+    theme = {
+      name = "catppuccin-mocha-mauve-compact+rimless";
+      package = pkgs.catppuccin-gtk.override {
+        variant = "mocha";
+        accents = [ "mauve" ];
+        size = "compact";
+        tweaks = [
+          "rimless"
+        ];
+      };
+    };
+  };
+
+  # Now symlink the `~/.config/gtk-4.0/` folder declaratively:
+  xdg.configFile = {
+    "gtk-4.0/assets".source =
+      "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";
+    "gtk-4.0/gtk.css".source =
+      "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk.css";
+    "gtk-4.0/gtk-dark.css".source =
+      "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
   };
 
   programs.firefox.enable = true;
@@ -45,7 +83,6 @@
       font.normal.family = "Berkeley Mono Nerd Font";
     };
   };
-  programs.kitty.enable = true; # for default hyprland setup
   programs.rofi.enable = true;
   programs.wofi.enable = true;
   programs.git = {
@@ -59,6 +96,7 @@
 
   services.swaync.enable = true;
   services.blueman-applet.enable = true;
+  services.swayosd.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

@@ -6,6 +6,13 @@
     settings.vim = {
       vimAlias = true;
 
+      theme = {
+        enable = true;
+        name = "catppuccin";
+        style = "mocha";
+        transparent = true;
+      };
+
       # editor options
       options = {
         expandtab = true;
@@ -14,11 +21,6 @@
       };
 
       # ui and interaction
-      theme = {
-        enable = true;
-        name = "gruvbox";
-        style = "dark";
-      };
       dashboard.dashboard-nvim.enable = true;
       telescope.enable = true;
       statusline.lualine.enable = true;

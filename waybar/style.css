@@ -1,6 +1,6 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: Berkeley Mono Nerd Font, monospace;
+  font-family: Noto Sans, sans-serif;
   font-size: 14px;
   margin: 0;
   padding: 0;
@@ -16,36 +16,36 @@ window#waybar {
 .modules-right {
   border-radius: 5px;
   margin: 5px;
-  border: 2px solid white;
+  border: 2px solid @text;
+  background-color: @base;
 }
 
 .module {
   padding: 0 10px;
-  color: white;
+  color: @text;
 }
 
 #battery {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: @base;
+  color: @text;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: #ffffff;
-  background-color: #26A65B;
+  color: @green;
 }
 
 @keyframes blink {
   to {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: @base;
+    color: @text;
   }
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-  background-color: #f53c3c;
-  color: #ffffff;
+  background-color: @red;
+  color: @text;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: steps(12);
@@ -53,16 +53,12 @@ window#waybar {
   animation-direction: alternate;
 }
 
-#tray {
-  background-color: gray;
-}
-
 #custom-notification {
-  color: white;
+  color: @text;
 }
 
 #expand {
-  color: white;
+  color: @text;
 }
 
 #expand>*:not(last-child) {
@@ -71,20 +67,23 @@ window#waybar {
 
 #clock {}
 
-#power-profiles-daemon {
-  color: white;
-}
 
 #power-profiles-daemon.power-saver {
-  background-color: #26a65b;
+  color: @green;
 }
 
 #power-profiles-daemon.performance {
-  background-color: #e8d824;
+  color: @maroon;
+  background-color: @base;
 }
 
 #power-profiles-daemon.balanced {
-  background-color: #7986a7;
+  background-color: @base;
+  color: @mauve;
+}
+
+window#waybar.empty .modules-center {
+  opacity: 0;
 }
 
 #workspaces {
@@ -95,26 +94,42 @@ window#waybar {
   border-radius: 0;
   padding: 0;
   margin: 0;
-  color: white;
+  color: @text;
 }
 
 #workspaces button.empty {
-  color: grey;
+  color: @subtext0;
 }
 
 #workspaces button.visible {
-  background-color: grey;
-  color: black;
+  background-color: @overlay0;
+  color: @base;
   font-weight: bold;
 }
 
 #workspaces button.active {
-  background-color: white;
-  color: black;
+  background-color: @text;
+  color: @base;
   font-weight: bold;
 }
 
 #workspaces button.urgent {
-  color: red;
+  color: @maroon;
   font-weight: bold;
+}
+
+.pavu-muted {
+  color: @surface0;
+}
+
+.pavu-mic {
+  color: @maroon;
+}
+
+.pavu-mic-muted {
+  color: @red;
+}
+
+.pavu-icon {
+  margin-right: 3px;
 }

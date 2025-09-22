@@ -176,16 +176,20 @@
         "$mod SHIFT,r,exec,pkill rofi || ${pkgs.rofi}/bin/rofi -show drun"
         "ALT,Tab,cyclenext"
         "ALT,Tab,bringactivetotop"
+      ];
 
-        ",XF86AudioRaiseVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-        ",XF86AudioLowerVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-        ",XF86AudioMute,exec,wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        ",XF86AudioPlay,exec,playerctl play-pause"
-        ",XF86AudioPause,exec,playerctl play-pause"
-        ",XF86AudioNext,exec,playerctl next"
-        ",XF86AudioPrev,exec,playerctl previous"
-        ",XF86MonBrightnessDown,exec,brightnessctl set 5%-"
-        ",XF86MonBrightnessUp,exec,brightnessctl set +5%"
+      bindle = [
+        ",XF86AudioRaiseVolume,exec,swayosd-client --output-volume +5"
+        ",XF86AudioLowerVolume,exec,swayosd-client --output-volume -5"
+        ",XF86AudioMute,exec,swayosd-client --output-volume mute-toggle"
+        ",XF86AudioMicMute,exec,sh -c 'swayosd-client --input-volume mute-toggle; micStatus=$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -c MUTED); brightnessctl -d platform::micmute set $micStatus'"
+        ",XF86AudioPlay,exec,swayosd-client --playerctl=play-pause"
+        ",XF86AudioPause,exec,swayosd-client --playerctl=play-pause"
+        ",XF86AudioNext,exec,swayosd-client --playerctl=next"
+        ",XF86AudioPrev,exec,swayosd-client --playerctl=previous"
+        ",XF86MonBrightnessDown,exec,swayosd-client --brightness=lower"
+        ",XF86MonBrightnessUp,exec,swayosd-client --brightness=raise"
+
       ];
 
       bindm = [
