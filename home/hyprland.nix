@@ -182,8 +182,8 @@
       ];
 
       bindle = [
-        ",XF86AudioRaiseVolume,exec,swayosd-client --output-volume +5"
-        ",XF86AudioLowerVolume,exec,swayosd-client --output-volume -5"
+        ",XF86AudioRaiseVolume,exec,swayosd-client --max-volume 150 --output-volume +5"
+        ",XF86AudioLowerVolume,exec,swayosd-client --max-volume 150 --output-volume -5"
         ",XF86AudioMute,exec,swayosd-client --output-volume mute-toggle"
         ",XF86AudioMicMute,exec,sh -c 'swayosd-client --input-volume mute-toggle; micStatus=$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -c MUTED); brightnessctl -d platform::micmute set $micStatus'"
         ",XF86AudioPlay,exec,swayosd-client --playerctl=play-pause"
@@ -197,6 +197,10 @@
       bindm = [
         "$mod,mouse:272,movewindow"
         "$mod,mouse:273,resizewindow"
+      ];
+
+      gesture = [
+        "3,horizontal,workspace"
       ];
 
       exec-once = [
