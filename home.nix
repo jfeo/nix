@@ -21,6 +21,7 @@
     packages = with pkgs; [
       wget
       curl
+      jq
       swww
       hyprpolkitagent
       hyprlock
@@ -96,6 +97,7 @@
     };
   };
 
+  services.hyprsunset.enable = true;
   services.swaync.enable = true;
   services.blueman-applet.enable = true;
   services.swayosd.enable = true;

@@ -22,6 +22,7 @@ in
       modules-right = [
         "group/expand"
         "tray"
+        "custom/sunset"
         "pulseaudio#audio"
         "pulseaudio#source"
         "battery"
@@ -134,6 +135,20 @@ in
       "custom/endpoint" = {
         format = "|";
         tooltip = false;
+      };
+
+      "custom/sunset" = {
+        exec = "hyprctl hyprsunset temperature | jq --unbuffered --compact-output -Rn '{alt: input}'";
+        format = "{icon}";
+        return-type = "json";
+        format-icons = {
+          "4000" = "";
+          default = "";
+        };
+        tooltip-format = "Blue light filter";
+        interval = "once";
+        on-click = "hyprctl hyprsunset temperature | grep -q 4000 && hyprctl hyprsunset temperature 6500 || hyprctl hyprsunset temperature 4000; pkill -SIGRTMIN+8 waybar";
+        signal = 8;
       };
 
       "custom/power" = {
