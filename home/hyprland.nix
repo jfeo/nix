@@ -130,12 +130,6 @@
         "$mod,tab,focuscurrentorlast"
         "$mod,f,fullscreen"
 
-        # Screen resize
-        "$mod CTRL,h,resizeactive,-20 0"
-        "$mod CTRL,l,resizeactive,20 0"
-        "$mod CTRL,k,resizeactive,0 -20"
-        "$mod CTRL,j,resizeactive,0 20"
-
         # Workspaces
         "$mod,1,workspace,1"
         "$mod,2,workspace,2"
@@ -179,6 +173,14 @@
         "ALT,Tab,bringactivetotop"
       ];
 
+      binde = [
+        # Screen resize
+        "$mod CTRL,h,resizeactive,-20 0"
+        "$mod CTRL,l,resizeactive,20 0"
+        "$mod CTRL,k,resizeactive,0 -20"
+        "$mod CTRL,j,resizeactive,0 20"
+      ];
+
       bindle = [
         ",XF86AudioRaiseVolume,exec,swayosd-client --output-volume +5"
         ",XF86AudioLowerVolume,exec,swayosd-client --output-volume -5"
@@ -190,7 +192,6 @@
         ",XF86AudioPrev,exec,swayosd-client --playerctl=previous"
         ",XF86MonBrightnessDown,exec,swayosd-client --brightness=lower"
         ",XF86MonBrightnessUp,exec,swayosd-client --brightness=raise"
-
       ];
 
       bindm = [

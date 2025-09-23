@@ -37,11 +37,19 @@
       nwg-look
       nwg-displays
       catppuccin-gtk
+      catppuccin-cursors.mochaDark
       rofi-power-menu
     ];
 
     sessionVariables = {
       EDITOR = "vim";
+    };
+
+    pointerCursor = {
+      enable = true;
+      name = "Catpuccin Mocha Dark";
+      package = pkgs.catppuccin-cursors.mochaDark;
+      size = 24;
     };
   };
 

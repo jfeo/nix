@@ -98,7 +98,7 @@ window#waybar.empty .modules-center {
 }
 
 #workspaces button.empty {
-  color: @subtext0;
+  color: @overlay1;
 }
 
 #workspaces button.visible {
