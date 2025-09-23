@@ -1,4 +1,8 @@
 { ... }:
+let
+  catppuccin-mocha-red = "#f38ba8";
+  catppuccin-mocha-overlay2 = "#9399b2";
+in
 {
   programs.waybar = {
     enable = true;
@@ -23,6 +27,7 @@
         "battery"
         "power-profiles-daemon"
         "clock"
+        "custom/power"
         "custom/notification"
       ];
 
@@ -57,7 +62,7 @@
 
       "pulseaudio#audio" = {
         format = "{icon}   {volume}%";
-        format-muted = "󰝟";
+        format-muted = "<span foreground='${catppuccin-mocha-overlay2}'>󰝟</span>";
         format-icons = {
           headphone = "";
           phone = "";
@@ -74,8 +79,8 @@
 
       "pulseaudio#source" = {
         format = "{format_source}";
-        format-source = " {volume}%";
-        format-source-muted = "";
+        format-source = "<span foreground='${catppuccin-mocha-red}'> {volume}%</span>";
+        format-source-muted = "<span foreground='${catppuccin-mocha-overlay2}'></span>";
       };
 
       "custom/notification" = {
@@ -129,6 +134,12 @@
       "custom/endpoint" = {
         format = "|";
         tooltip = false;
+      };
+
+      "custom/power" = {
+        format = "󰐥";
+        tooltip = false;
+        on-click = "rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 20em;} listview {lines: 6;}'";
       };
 
       "group/expand" = {

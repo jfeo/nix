@@ -34,7 +34,9 @@
       pavucontrol
       wev
       nwg-look
+      nwg-displays
       catppuccin-gtk
+      rofi-power-menu
     ];
 
     sessionVariables = {
@@ -97,6 +99,8 @@
   services.swaync.enable = true;
   services.blueman-applet.enable = true;
   services.swayosd.enable = true;
+
+  services.gnome-keyring.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

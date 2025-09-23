@@ -122,6 +122,7 @@
         "$mod SHIFT,q,killactive"
         "$mod SHIFT,e,exit"
         "$mod SHIFT ALT,l,exec,${pkgs.hyprlock}/bin/hyprlock"
+        "$mod SHIFT,p,exec,${pkgs.rofi}/bin/rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 20em;} listview {lines: 6;}'"
 
         # Screen focus
         "$mod SHIFT,Space,togglefloating"
