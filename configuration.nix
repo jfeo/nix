@@ -8,6 +8,7 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
+    inputs.catppuccin.nixosModules.catppuccin
   ];
 
   # nix settings
@@ -56,8 +57,10 @@
   services.xserver.xkb.layout = "dk";
 
   # desktop environment
+  catppuccin.sddm.enable = true;
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.package = pkgs.kdePackages.sddm;
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
@@ -83,6 +86,7 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
   services.printing.enable = true;
+  services.power-profiles-daemon.enable = true;
 
   users.users.feo = {
     isNormalUser = true;
