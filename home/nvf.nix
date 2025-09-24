@@ -59,6 +59,33 @@
         bash.enable = true;
         css.enable = true;
       };
+
+      keymaps = [
+        {
+          key = "<leader>cy";
+          mode = [ "v" ];
+          action = "\"+y";
+          silent = true;
+          desc = "Yank to system clipboard";
+        }
+        {
+          key = "<leader>cp";
+          mode = [
+            "n"
+            "v"
+          ];
+          action = "\"+p";
+          silent = true;
+          desc = "Paste from system clipboard";
+        }
+        {
+          key = "<leader>e";
+          mode = [ "n" ];
+          action = ":Neotree toggle<CR>";
+          silent = true;
+          desc = "Toggle Neotree file manager";
+        }
+      ];
     };
   };
 
