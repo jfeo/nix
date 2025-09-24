@@ -110,8 +110,8 @@ in
         interval = 30;
         states = {
           good = 95;
-          warning = 30;
-          critical = 20;
+          warning = 20;
+          critical = 10;
         };
         format = "{capacity}% {icon}";
         format-charging = "{capacity}% 󰂄";
