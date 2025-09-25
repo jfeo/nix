@@ -7,6 +7,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./disable-touchscreen.nix
     inputs.homanager.nixosModules.default
     inputs.catppuccin.nixosModules.catppuccin
   ];
