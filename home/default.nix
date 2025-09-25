@@ -9,6 +9,7 @@
     ./home.nix
     ./hypridle.nix
     ./hyprland.nix
+    ./hyprlock.nix
     ./nvf.nix
     ./packages.nix
     ./rofi.nix
