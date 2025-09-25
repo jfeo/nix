@@ -7,7 +7,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    inputs.home-manager.nixosModules.default
+    inputs.homanager.nixosModules.default
     inputs.catppuccin.nixosModules.catppuccin
   ];
 
@@ -110,6 +110,8 @@
     killall
     wget
     curl
+    pciutils
+    usbutils
     btop
     htop
     unzip

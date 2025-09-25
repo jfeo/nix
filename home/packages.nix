@@ -1,0 +1,26 @@
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [
+    wget
+    curl
+    jq
+    swww
+    hyprpolkitagent
+    hypridle
+    hyprlock
+    obsidian
+    dunst
+    wl-clipboard
+    networkmanagerapplet
+    wl-color-picker
+    playerctl
+    brightnessctl
+    pavucontrol
+    wev
+    nwg-look
+    nwg-displays
+    catppuccin-gtk
+    catppuccin-cursors.mochaDark
+    rofi-power-menu
+  ];
+}
