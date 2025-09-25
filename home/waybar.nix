@@ -63,7 +63,7 @@ in
 
       "pulseaudio#audio" = {
         format = "{icon}   {volume}%";
-        format-muted = "<span foreground='${catppuccin-mocha-overlay2}'>󰝟</span>";
+        format-muted = "<span foreground='${catppuccin-mocha-overlay2}'></span>";
         format-icons = {
           headphone = "";
           phone = "";
