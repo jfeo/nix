@@ -8,7 +8,7 @@
   imports = [
     ./hardware-configuration.nix
     ./disable-touchscreen.nix
-    inputs.homanager.nixosModules.default
+    inputs.home-manager.nixosModules.default
     inputs.catppuccin.nixosModules.catppuccin
   ];
 
@@ -17,11 +17,11 @@
     "nix-command"
     "flakes"
   ];
+  nix.settings.download-buffer-size = 1073741824;
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.packageOverrides = pkgs: {
     berkeley-mono-nerd-font = pkgs.callPackage ./fonts/berkeley-mono-nerd-font.nix { };
   };
-  nix.settings.download-buffer-size = 1073741824;
 
   fonts = {
     packages = with pkgs; [
