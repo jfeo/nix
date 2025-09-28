@@ -5,6 +5,7 @@
     curl
     jq
     swww
+    xfce.thunar
     hyprpolkitagent
     hypridle
     hyprlock
