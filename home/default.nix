@@ -14,6 +14,7 @@
     ./packages.nix
     ./rofi.nix
     ./services.nix
+    ./thunderbird.nix
     ./waybar.nix
   ];
 }
