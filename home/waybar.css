@@ -35,19 +35,11 @@ window#waybar {
   color: @green;
 }
 
-@keyframes blink {
-  to {
-    background-color: @base;
-    color: @text;
-  }
-}
-
-/* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.warning:not(.charging) {
   color: @red;
   animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: steps(32);
+  animation-duration: 1.0s;
+  animation-timing-function: steps(48);
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
@@ -55,10 +47,17 @@ window#waybar {
 #battery.critical:not(.charging) {
   background-color: @red;
   animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: steps(32);
+  animation-duration: 0.25s;
+  animation-timing-function: steps(16);
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+@keyframes blink {
+  to {
+    background-color: @base;
+    color: @text;
+  }
 }
 
 #custom-notification {
@@ -122,8 +121,13 @@ window#waybar.empty .modules-center {
 }
 
 #workspaces button.urgent {
-  color: @maroon;
+  background-color: @red;
   font-weight: bold;
+  animation-name: blink;
+  animation-duration: 1.0s;
+  animation-timing-function: steps(48);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .pavu-muted {
