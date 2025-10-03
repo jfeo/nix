@@ -23,5 +23,6 @@
     catppuccin-gtk
     catppuccin-cursors.mochaDark
     rofi-power-menu
+    starship
   ];
 }
