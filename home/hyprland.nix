@@ -148,9 +148,11 @@
       "$mod ALT,f,exec,${pkgs.firefox}/bin/firefox"
       "$mod ALT,o,exec,${pkgs.obsidian}/bin/obsidian"
       "$mod,r,exec,pkill rofi || ${pkgs.rofi}/bin/rofi -show drun"
-      "$mod SHIFT,r,exec,pkill rofi || ${pkgs.rofi}/bin/rofi -show drun"
+      "$mod SHIFT,r,exec,pkill rofi || ${pkgs.rofi}/bin/rofi -show run"
       "ALT,Tab,cyclenext"
       "ALT,Tab,bringactivetotop"
+      "ALT SHIFT,Tab,cyclenext,prev"
+      "ALT SHIFT,Tab,bringactivetotop"
     ];
 
     binde = [

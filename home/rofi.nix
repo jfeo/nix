@@ -12,6 +12,7 @@ in
     configuration = {
       show-icons = true;
       display-drun = "";
+      display-run = ">";
       drun-display-format = "{icon} {name}";
       disable-history = false;
     };
