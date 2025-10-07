@@ -1,11 +1,14 @@
 { config, pkgs, ... }:
+let
+  accent = "rosewater";
+in
 {
   gtk.enable = true;
   gtk.theme = {
-    name = "catppuccin-mocha-mauve-compact+rimless";
+    name = "catppuccin-mocha-${accent}-compact+rimless";
     package = pkgs.catppuccin-gtk.override {
       variant = "mocha";
-      accents = [ "mauve" ];
+      accents = [ "${accent}" ];
       size = "compact";
       tweaks = [
         "rimless"
