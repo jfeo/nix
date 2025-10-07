@@ -11,6 +11,7 @@
     ./hypridle.nix
     ./hyprland.nix
     ./hyprlock.nix
+    ./hyprpaper.nix
     ./nvf.nix
     ./packages.nix
     ./rofi.nix

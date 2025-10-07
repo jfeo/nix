@@ -24,5 +24,6 @@
     catppuccin-cursors.mochaDark
     rofi-power-menu
     starship
+    qimgv
   ];
 }
