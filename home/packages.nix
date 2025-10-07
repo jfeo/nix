@@ -4,6 +4,7 @@
     wget
     curl
     jq
+    silver-searcher
     swww
     xfce.thunar
     hyprpolkitagent
