@@ -34,6 +34,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
+          (import ./linux-firmware_20250808.nix)
           home-manager.nixosModules.default
         ];
       };
