@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+  qt.enable = true;
+  qt.style.name = "kvantum";
+
   catppuccin = {
     enable = true;
     flavor = "mocha";
