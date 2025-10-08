@@ -9,5 +9,8 @@
       co = "checkout";
       amend = "commit --amend --no-edit";
     };
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
   };
 }
