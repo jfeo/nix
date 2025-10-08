@@ -59,6 +59,10 @@
       nix.enable = true;
       bash.enable = true;
       css.enable = true;
+      typst = {
+        enable = true;
+        extensions.typst-preview-nvim.enable = true;
+      };
     };
 
     keymaps = [

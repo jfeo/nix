@@ -26,5 +26,7 @@
     rofi-power-menu
     starship
     qimgv
+    typst
+    kdePackages.okular
   ];
 }
