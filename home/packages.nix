@@ -28,5 +28,7 @@
     qimgv
     typst
     kdePackages.okular
+    font-awesome
+    gimp
   ];
 }
