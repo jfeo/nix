@@ -8,6 +8,7 @@
     silver-searcher
     swww
     xfce.thunar
+    xfce.tumbler # thumbnails
     hyprpolkitagent
     hypridle
     hyprlock
