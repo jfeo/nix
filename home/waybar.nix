@@ -34,6 +34,11 @@ in
 
       # Module Configurations
       "hyprland/workspaces" = {
+        format = "{name} <span rise=\"1.5pt\">{icon}</span>";
+        format-icons = {
+          default = "◉︎";
+          empty = "○︎";
+        };
         persistent-workspaces = {
           "*" = [
             1
