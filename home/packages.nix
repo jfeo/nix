@@ -27,8 +27,10 @@
     starship
     qimgv
     typst
+    typstyle
     kdePackages.okular
     font-awesome
     gimp
+    grimblast
   ];
 }

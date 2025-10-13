@@ -144,6 +144,12 @@
       "$mod SHIFT,k,movewindow,u"
       "$mod SHIFT,j,movewindow,d"
 
+      # Screenshots
+      ",PRINT,exec,${pkgs.grimblast}/bin/grimblast -n copy output"
+      "SHIFT,PRINT,exec,${pkgs.grimblast}/bin/grimblast -n copy area"
+      "$mod,PRINT,exec,${pkgs.grimblast}/bin/grimblast -n save output"
+      "$mod SHIFT,PRINT,exec,${pkgs.grimblast}/bin/grimblast -n save area"
+
       # Applications
       "$mod ALT,f,exec,${pkgs.firefox}/bin/firefox"
       "$mod ALT,o,exec,${pkgs.obsidian}/bin/obsidian"
