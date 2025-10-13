@@ -19,5 +19,6 @@
     ./starship.nix
     ./thunderbird.nix
     ./waybar.nix
+    ./xdg.nix
   ];
 }

@@ -4,6 +4,7 @@
     wget
     curl
     jq
+    file
     silver-searcher
     swww
     xfce.thunar
