@@ -68,7 +68,7 @@
     };
 
     animations = {
-      enabled = true;
+      enabled = false;
       animation = [
         "windows,1,1,default"
         "border,1,3,default"
