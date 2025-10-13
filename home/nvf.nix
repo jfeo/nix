@@ -23,6 +23,20 @@
     telescope.enable = true;
     statusline.lualine.enable = true;
     ui.noice.enable = true;
+    ui.smartcolumn = {
+      enable = true;
+      setupOpts.disabled_filetypes = [
+        "help"
+        "text"
+        "markdown"
+        "NvimTree"
+        "alpha"
+        "dashboard"
+      ];
+      setupOpts.custom_colorcolumn = {
+        typst = "80";
+      };
+    };
     binds.whichKey = {
       enable = true;
       setupOpts.preset = "helix";
