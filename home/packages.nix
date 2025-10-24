@@ -1,39 +1,53 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    # desktop environment
+    hyprpolkitagent
+    hypridle
+    hyprlock
+    wev
+    nwg-look
+    nwg-displays
+    networkmanagerapplet
+    dunst
+    rofi-power-menu
+    grimblast
+    catppuccin-gtk
+    catppuccin-cursors.mochaDark
+    playerctl
+    brightnessctl
+    pavucontrol
+    swww
+    wl-color-picker
+
+    # cli utils
+    silver-searcher
+    starship
     wget
     curl
     jq
     file
-    silver-searcher
-    swww
-    xfce.thunar
-    xfce.tumbler # thumbnails
-    hyprpolkitagent
-    hypridle
-    hyprlock
-    obsidian
-    dunst
     wl-clipboard
-    networkmanagerapplet
-    wl-color-picker
-    playerctl
-    brightnessctl
-    pavucontrol
-    wev
-    nwg-look
-    nwg-displays
-    catppuccin-gtk
-    catppuccin-cursors.mochaDark
-    rofi-power-menu
-    starship
-    qimgv
-    typst
-    typstyle
-    kdePackages.okular
+
+    # fonts
     font-awesome
     fira
+
+    # programming
+    typst
+    typstyle
+
+    # file management and viewers
+    xfce.thunar
+    xfce.tumbler # thumbnails
+    xfce.catfish
+    kdePackages.okular
+    qimgv
+
+    # editing and office software
+    obsidian
     gimp
-    grimblast
+    inkscape
+    libreoffice
   ];
 }
