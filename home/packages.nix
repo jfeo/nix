@@ -32,6 +32,7 @@
     typstyle
     kdePackages.okular
     font-awesome
+    fira
     gimp
     grimblast
   ];
