@@ -11,6 +11,7 @@
     networkmanagerapplet
     dunst
     rofi-power-menu
+    rofi-file-browser
     grimblast
     catppuccin-gtk
     catppuccin-cursors.mochaDark
