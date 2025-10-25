@@ -7,6 +7,8 @@
       "image/bmp" = "qimgv.desktop";
       "image/tiff" = "qimgv.desktop";
       "image/png" = "qimgv.desktop";
+
+      "application/pdf" = "org.kde.okular.desktop";
     };
   };
 }
