@@ -38,6 +38,9 @@
     typst
     typstyle
 
+    # torrent
+    qbittorrent
+
     # file management and viewers
     xfce.thunar
     xfce.tumbler # thumbnails
