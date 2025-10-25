@@ -41,6 +41,9 @@
     # torrent
     qbittorrent
 
+    # networking
+    protonvpn-gui
+
     # file management and viewers
     xfce.thunar
     xfce.tumbler # thumbnails
