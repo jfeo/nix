@@ -4,6 +4,10 @@
   programs.nvf.settings.vim = {
     vimAlias = true;
 
+    globals = {
+      mapleader = ",";
+    };
+
     theme = {
       enable = true;
       name = "catppuccin";
