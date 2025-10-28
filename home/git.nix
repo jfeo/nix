@@ -1,14 +1,18 @@
 { ... }:
 {
+  programs.git.enable = true;
 
-  programs.git = {
-    enable = true;
-    userEmail = "jens@feodor.dk";
-    userName = "Jens Feodor Nielsen";
+  programs.git.settings = {
+    user = {
+      email = "jens@feodor.dk";
+      name = "Jens Feodor Nielsen";
+    };
+
     aliases = {
       co = "checkout";
       amend = "commit --amend --no-edit";
     };
+
     extraConfig = {
       init.defaultBranch = "main";
     };
