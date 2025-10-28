@@ -21,6 +21,9 @@
     swww
     wl-color-picker
 
+    google-chrome
+    vlc
+
     # cli utils
     silver-searcher
     starship
