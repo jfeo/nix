@@ -4,6 +4,7 @@
     ./alacritty.nix
     ./bash.nix
     ./catppuccin.nix
+    ./direnv.nix
     ./firefox.nix
     ./git.nix
     ./gtk.nix
