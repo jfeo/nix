@@ -59,5 +59,6 @@
     gimp
     inkscape
     libreoffice
+    scribus
   ];
 }
