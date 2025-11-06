@@ -10,6 +10,8 @@
 
       "application/pdf" = "org.kde.okular.desktop";
 
+      "inode/directory" = "thunar.desktop";
+
       # default browser
       "x-scheme-handler/http" = "firefox.desktop";
       "x-scheme-handler/https" = "firefox.desktop";
