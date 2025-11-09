@@ -24,11 +24,14 @@
     google-chrome
     vlc
 
+    # cli network utils
+    wget
+    curl
+    nmap
+
     # cli utils
     silver-searcher
     starship
-    wget
-    curl
     jq
     file
     wl-clipboard
