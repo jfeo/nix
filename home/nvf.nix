@@ -108,6 +108,28 @@
         silent = true;
         desc = "Toggle Neotree file manager";
       }
+      {
+        key = "<leader>ts";
+        mode = "n";
+        action = ":split<CR>:terminal<CR>";
+        silent = true;
+        desc = "Create terminal horizontally";
+      }
+      {
+        key = "<leader>tv";
+        mode = "n";
+        action = ":vsplit<CR>:terminal<CR>";
+        silent = true;
+        desc = "Create terminal vertically";
+      }
     ];
+
+    maps.terminal = {
+      "<Esc>" = {
+        action = "<C-\\><C-n>";
+        silent = true;
+        desc = "Escape terminal mode";
+      };
+    };
   };
 }
