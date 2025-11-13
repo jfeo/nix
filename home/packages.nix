@@ -23,6 +23,7 @@
 
     google-chrome
     vlc
+    signal-desktop
 
     # cli network utils
     wget
