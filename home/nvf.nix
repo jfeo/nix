@@ -26,7 +26,10 @@
     dashboard.dashboard-nvim.enable = true;
     telescope.enable = true;
     statusline.lualine.enable = true;
-    ui.noice.enable = true;
+    ui.noice = {
+      enable = true;
+      setupOpts.lsp.signature.enabled = true;
+    };
     ui.smartcolumn = {
       enable = true;
       setupOpts.disabled_filetypes = [
@@ -80,6 +83,7 @@
       typst = {
         enable = true;
         extensions.typst-preview-nvim.enable = true;
+        format.enable = true;
       };
     };
 
