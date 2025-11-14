@@ -82,10 +82,22 @@
       css.enable = true;
       typst = {
         enable = true;
-        extensions.typst-preview-nvim.enable = true;
+        lsp.enable = true;
+        treesitter.enable = true;
         format.enable = true;
+        extensions.typst-preview-nvim.enable = true;
       };
     };
+
+    formatter.conform-nvim = {
+      enable = true;
+      setupOpts.formatters_by_ft = {
+        typst = [ "typstyle" ];
+      };
+      setupOpts.formatters.typstyle.append_args = [ "--wrap-text" ];
+    };
+
+    visuals.rainbow-delimiters.enable = true;
 
     keymaps = [
       {
