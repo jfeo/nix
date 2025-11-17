@@ -44,6 +44,9 @@
     # programming
     typst
     typstyle
+    gcc
+    gnumake
+    cmake
 
     # torrent
     qbittorrent
