@@ -8,7 +8,7 @@
       name = "Jens Feodor Nielsen";
     };
 
-    aliases = {
+    alias = {
       co = "checkout";
       amend = "commit --amend --no-edit";
     };
