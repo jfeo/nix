@@ -81,6 +81,7 @@
       bash.enable = true;
       css.enable = true;
       go.enable = true;
+      clang.enable = true;
       typst = {
         enable = true;
         lsp.enable = true;
