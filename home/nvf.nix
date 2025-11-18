@@ -82,6 +82,8 @@
       css.enable = true;
       go.enable = true;
       clang.enable = true;
+      markdown.enable = true;
+      markdown.format.enable = true;
       typst = {
         enable = true;
         lsp.enable = true;
