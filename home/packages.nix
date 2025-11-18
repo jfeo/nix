@@ -29,6 +29,7 @@
     wget
     curl
     nmap
+    manix # nix help/docs
 
     # cli utils
     silver-searcher
