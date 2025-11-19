@@ -57,6 +57,9 @@
 
     # file management and viewers
     xfce.thunar
+    xfce.thunar-volman
+    xfce.thunar-archive-plugin
+    xfce.thunar-media-tags-plugin
     xfce.tumbler # thumbnails
     xfce.catfish
     kdePackages.okular
@@ -68,5 +71,8 @@
     inkscape
     libreoffice
     scribus
+
+    # rpi
+    rpi-imager
   ];
 }

@@ -39,6 +39,8 @@
   # networking
   networking.hostName = "taenknix"; # Define your hostname.
   networking.networkmanager.enable = true;
+  services.avahi.enable = true;
+  services.avahi.nssmdns4 = true;
 
   # locale
   time.timeZone = "Europe/Copenhagen";
@@ -89,6 +91,7 @@
   services.blueman.enable = true;
   services.printing.enable = true;
   services.power-profiles-daemon.enable = true;
+  services.gvfs.enable = true;
 
   users.users.feo = {
     isNormalUser = true;
