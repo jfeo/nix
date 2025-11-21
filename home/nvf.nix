@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   programs.nvf.enable = true;
   programs.nvf.settings.vim = {
@@ -151,5 +151,33 @@
         desc = "Escape terminal mode";
       };
     };
+
+    highlight = {
+      ActiveWindow = {
+        bg = "#212133"; # matches catppuccin mocha 'base' color
+      };
+    };
+
+    autocmds = [
+      {
+        event = [
+          "WinEnter"
+          "WinLeave"
+          "BufEnter"
+        ];
+        callback = lib.generators.mkLuaInline ''
+          function()
+            for _, win in ipairs(vim.api.nvim_list_wins()) do
+              local is_current = (win == vim.api.nvim_get_current_win())
+              vim.api.nvim_set_option_value(
+                "winhighlight",
+                is_current and "Normal:ActiveWindow" or "Normal:Normal",
+                { win = win }
+              )
+            end
+          end
+        '';
+      }
+    ];
   };
 }
