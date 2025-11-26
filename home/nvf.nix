@@ -1,6 +1,7 @@
 { lib, ... }:
 {
   programs.nvf.enable = true;
+  programs.nvf.enableManpages = true;
   programs.nvf.settings.vim = {
     vimAlias = true;
 
@@ -51,6 +52,7 @@
     mini.tabline.enable = true;
     projects.project-nvim.enable = true;
     filetree.neo-tree.enable = true;
+    visuals.rainbow-delimiters.enable = true;
 
     # version control
     git.vim-fugitive.enable = true;
@@ -101,8 +103,13 @@
       setupOpts.formatters.typstyle.append_args = [ "--wrap-text" ];
     };
 
-    visuals.rainbow-delimiters.enable = true;
+    # debugging
+    debugger.nvim-dap.enable = true;
+    debugger.nvim-dap.ui.enable = true;
+    languages.clang.dap.enable = true;
+    # vim.languages.enableDAP = true;
 
+    # keymaps
     keymaps = [
       {
         key = "<leader>cy";
@@ -152,6 +159,7 @@
       };
     };
 
+    # highligh active window
     highlight = {
       ActiveWindow = {
         bg = "#212133"; # matches catppuccin mocha 'base' color
