@@ -43,6 +43,7 @@
       ];
       setupOpts.custom_colorcolumn = {
         typst = "80";
+        make = "80";
       };
     };
     binds.whichKey = {
@@ -107,7 +108,6 @@
     debugger.nvim-dap.enable = true;
     debugger.nvim-dap.ui.enable = true;
     languages.clang.dap.enable = true;
-    # vim.languages.enableDAP = true;
 
     # keymaps
     keymaps = [
