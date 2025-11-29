@@ -68,6 +68,7 @@
     # editing and office software
     obsidian
     gimp
+    pinta
     inkscape
     libreoffice
     scribus
