@@ -117,6 +117,7 @@
     curl
     pciutils
     usbutils
+    psutils
     btop
     htop
     unzip
