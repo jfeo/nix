@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
   programs.nvf.enable = true;
   programs.nvf.enableManpages = true;
@@ -93,6 +93,14 @@
         treesitter.enable = true;
         format.enable = true;
         extensions.typst-preview-nvim.enable = true;
+      };
+      ruby = {
+        enable = true;
+        lsp = {
+          enable = true;
+          package = pkgs.rubyPackages.solargraph;
+        };
+        format.enable = true;
       };
     };
 
