@@ -54,6 +54,7 @@
     projects.project-nvim.enable = true;
     filetree.neo-tree.enable = true;
     visuals.rainbow-delimiters.enable = true;
+    utility.ccc.enable = true;
 
     # version control
     git.vim-fugitive.enable = true;
@@ -135,6 +136,13 @@
         action = "\"+p";
         silent = true;
         desc = "Paste from system clipboard";
+      }
+      {
+        key = "<leader>cc";
+        mode = [ "n" ];
+        action = ":CccPick";
+        silent = true;
+        desc = "Pick color using ccc";
       }
       {
         key = "<leader>e";
