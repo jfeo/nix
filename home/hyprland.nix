@@ -11,8 +11,10 @@
     "$mod" = "SUPER";
 
     monitor = [
-      ",prefered,auto,1"
-      "desc:Dell Inc. DELL P2416D 07C536BP0FPL,preferred,auto-left,1" # office monitor to the left
+      "eDP-1,1920x1200@60,0x0,1"
+      "desc:Dell Inc. DELL P2416D 07C536BP0FPL,preferred,auto-left,1" # first office monitor to the left
+      "desc:Microstep MSI MP273A PB4HA74400993,1920x1080@60,0x-1080,1" # second office monitor to the top
+
     ];
 
     xwayland = {
