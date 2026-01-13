@@ -112,6 +112,13 @@
         };
         format.enable = true;
       };
+      r = {
+        enable = true;
+        format = {
+          enable = true;
+          type = "styler";
+        };
+      };
     };
 
     formatter.conform-nvim = {
