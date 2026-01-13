@@ -87,7 +87,10 @@
 
     languages = {
       enableTreesitter = true;
-      nix.enable = true;
+      nix = {
+        enable = true;
+        format.enable = true;
+      };
       bash.enable = true;
       css.enable = true;
       go.enable = true;
