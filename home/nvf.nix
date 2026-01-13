@@ -1,5 +1,8 @@
-{ lib, pkgs, ... }:
 {
+  lib,
+  pkgs,
+  ...
+}: {
   programs.nvf.enable = true;
   programs.nvf.enableManpages = true;
   programs.nvf.settings.vim = {
@@ -70,7 +73,10 @@
       };
     };
     autocomplete.blink-cmp.enable = true;
-    treesitter.enable = true;
+    treesitter = {
+      enable = true;
+      fold = true;
+    };
     lsp = {
       enable = true;
       formatOnSave = true;
@@ -108,9 +114,9 @@
     formatter.conform-nvim = {
       enable = true;
       setupOpts.formatters_by_ft = {
-        typst = [ "typstyle" ];
+        typst = ["typstyle"];
       };
-      setupOpts.formatters.typstyle.append_args = [ "--wrap-text" ];
+      setupOpts.formatters.typstyle.append_args = ["--wrap-text"];
     };
 
     # debugging
@@ -122,7 +128,7 @@
     keymaps = [
       {
         key = "<leader>cy";
-        mode = [ "v" ];
+        mode = ["v"];
         action = "\"+y";
         silent = true;
         desc = "Yank to system clipboard";
@@ -139,14 +145,14 @@
       }
       {
         key = "<leader>cc";
-        mode = [ "n" ];
+        mode = ["n"];
         action = ":CccPick";
         silent = true;
         desc = "Pick color using ccc";
       }
       {
         key = "<leader>e";
-        mode = [ "n" ];
+        mode = ["n"];
         action = ":Neotree toggle<CR>";
         silent = true;
         desc = "Toggle Neotree file manager";

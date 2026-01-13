@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   qt.enable = true;
   qt.style.name = "kvantum";
 

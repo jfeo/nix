@@ -1,11 +1,9 @@
-{ ... }:
-let
+{...}: let
   imagePath = "/home/feo/Downloads/IMG_20250814_172041_rotated.jpg";
-in
-{
+in {
   services.hyprpaper.enable = true;
   services.hyprpaper.settings = {
-    preload = [ "${imagePath}" ];
-    wallpaper = [ ",${imagePath}" ];
+    preload = ["${imagePath}"];
+    wallpaper = [",${imagePath}"];
   };
 }

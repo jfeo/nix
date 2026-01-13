@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   services.hyprsunset.enable = true;
   services.swaync.enable = true;
   services.blueman-applet.enable = true;

@@ -1,12 +1,10 @@
-{ ... }:
-let
+{...}: let
   catppuccin-mocha-red = "#f38ba8";
   catppuccin-mocha-overlay2 = "#9399b2";
-in
-{
+in {
   programs.waybar = {
     enable = true;
-    style = (builtins.readFile ./waybar.css);
+    style = builtins.readFile ./waybar.css;
   };
 
   programs.waybar.settings = [
@@ -18,7 +16,7 @@ in
       modules-left = [
         "hyprland/workspaces"
       ];
-      modules-center = [ "hyprland/window" ];
+      modules-center = ["hyprland/window"];
       modules-right = [
         "group/expand"
         "tray"
@@ -198,5 +196,4 @@ in
       };
     }
   ];
-
 }

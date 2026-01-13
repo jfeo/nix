@@ -2,9 +2,7 @@
   pkgs,
   inputs,
   ...
-}:
-
-{
+}: {
   imports = [
     ./hardware-configuration.nix
     ./disable-touchscreen.nix
@@ -20,7 +18,7 @@
   nix.settings.download-buffer-size = 1073741824;
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.packageOverrides = pkgs: {
-    berkeley-mono-nerd-font = pkgs.callPackage ./fonts/berkeley-mono-nerd-font.nix { };
+    berkeley-mono-nerd-font = pkgs.callPackage ./fonts/berkeley-mono-nerd-font.nix {};
   };
 
   fonts = {
@@ -105,7 +103,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {inherit inputs;};
     users.feo = import ./home.nix;
   };
 

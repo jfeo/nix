@@ -22,20 +22,18 @@
     catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      ...
-    }@inputs:
-    {
-      nixosConfigurations.taenknix = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./configuration.nix
-          home-manager.nixosModules.default
-        ];
-      };
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: {
+    nixosConfigurations.taenknix = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./configuration.nix
+        home-manager.nixosModules.default
+      ];
     };
+  };
 }

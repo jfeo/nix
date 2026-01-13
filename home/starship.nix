@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   programs.starship.enable = true;
   programs.starship.enableBashIntegration = true;
   programs.starship.settings = {

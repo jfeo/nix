@@ -1,9 +1,4 @@
-{
-  inputs,
-  ...
-}:
-
-{
+{inputs, ...}: {
   imports = [
     inputs.nvf.homeManagerModules.default
     inputs.catppuccin.homeModules.catppuccin

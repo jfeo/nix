@@ -1,8 +1,6 @@
-{ config, ... }:
-let
+{config, ...}: let
   inherit (config.lib.formats.rasi) mkLiteral;
-in
-{
+in {
   programs.rofi.enable = true;
 
   programs.rofi.theme = {
