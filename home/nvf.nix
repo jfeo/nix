@@ -8,9 +8,23 @@
   programs.nvf.settings.vim = {
     vimAlias = true;
 
+    # -----------------------------------------
+    # Basic editor options
+    # -----------------------------------------
+
     globals = {
       mapleader = ",";
     };
+
+    options = {
+      expandtab = true;
+      tabstop = 2;
+      shiftwidth = 2;
+    };
+
+    # -----------------------------------------
+    # User interface and interaction
+    # -----------------------------------------
 
     theme = {
       enable = true;
@@ -18,51 +32,64 @@
       style = "mocha";
       transparent = true;
     };
-
-    # editor options
-    options = {
-      expandtab = true;
-      tabstop = 2;
-      shiftwidth = 2;
-    };
-
-    # ui and interaction
     dashboard.dashboard-nvim.enable = true;
     telescope.enable = true;
     statusline.lualine.enable = true;
-    ui.noice = {
-      enable = true;
-      setupOpts.lsp.signature.enabled = true;
-    };
-    ui.smartcolumn = {
-      enable = true;
-      setupOpts.disabled_filetypes = [
-        "help"
-        "text"
-        "markdown"
-        "NvimTree"
-        "alpha"
-        "dashboard"
-      ];
-      setupOpts.custom_colorcolumn = {
-        typst = "80";
-        make = "80";
+    ui = {
+      noice = {
+        enable = true;
+        setupOpts.lsp.signature.enabled = true;
+      };
+
+      smartcolumn = {
+        enable = true;
+        setupOpts = {
+          disabled_filetypes = [
+            "help"
+            "text"
+            "markdown"
+            "NvimTree"
+            "alpha"
+            "dashboard"
+          ];
+          custom_colorcolumn = {
+            typst = "80";
+            make = "80";
+          };
+        };
       };
     };
-    binds.whichKey = {
-      enable = true;
-      setupOpts.preset = "helix";
-    };
+
     mini.tabline.enable = true;
     projects.project-nvim.enable = true;
-    filetree.neo-tree.enable = true;
     visuals.rainbow-delimiters.enable = true;
     utility.ccc.enable = true;
 
-    # version control
+    # -----------------------------------------
+    # Version control
+    # -----------------------------------------
+
     git.vim-fugitive.enable = true;
 
-    # language support
+    # -----------------------------------------
+    # File tree explorer
+    # -----------------------------------------
+
+    filetree.neo-tree = {
+      enable = true;
+      setupOpts = {
+        window.position = "float";
+        filesystem = {
+          follow_current_file.enabled = true;
+          use_libuv_file_watcher = true;
+        };
+      };
+    };
+
+    # -----------------------------------------
+    # Language support
+    # -----------------------------------------
+
     diagnostics = {
       enable = true;
       config = {
@@ -72,11 +99,14 @@
         virtual_text = true;
       };
     };
+
     autocomplete.blink-cmp.enable = true;
+
     treesitter = {
       enable = true;
       fold = true;
     };
+
     lsp = {
       enable = true;
       formatOnSave = true;
@@ -94,7 +124,10 @@
       bash.enable = true;
       css.enable = true;
       go.enable = true;
-      clang.enable = true;
+      clang = {
+        enable = true;
+        dap.enable = true;
+      };
       markdown.enable = true;
       markdown.format.enable = true;
       typst = {
@@ -121,6 +154,7 @@
       };
     };
 
+    # formatting
     formatter.conform-nvim = {
       enable = true;
       setupOpts.formatters_by_ft = {
@@ -130,9 +164,19 @@
     };
 
     # debugging
-    debugger.nvim-dap.enable = true;
-    debugger.nvim-dap.ui.enable = true;
-    languages.clang.dap.enable = true;
+    debugger = {
+      nvim-dap.enable = true;
+      nvim-dap.ui.enable = true;
+    };
+
+    # -----------------------------------------
+    # Key bindings and keymaps
+    # -----------------------------------------
+
+    binds.whichKey = {
+      enable = true;
+      setupOpts.preset = "helix";
+    };
 
     # keymaps
     keymaps = [
@@ -191,7 +235,10 @@
       };
     };
 
-    # highligh active window
+    # -----------------------------------------
+    # Highligh active window
+    # -----------------------------------------
+
     highlight = {
       ActiveWindow = {
         bg = "#212133"; # matches catppuccin mocha 'base' color
