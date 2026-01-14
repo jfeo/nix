@@ -117,50 +117,35 @@
 
     languages = {
       enableTreesitter = true;
-      nix = {
-        enable = true;
-        format.enable = true;
-      };
+      enableDAP = true;
+      enableExtraDiagnostics = true;
+      enableFormat = true;
+      nix.enable = true;
       bash.enable = true;
       css.enable = true;
       go.enable = true;
-      clang = {
-        enable = true;
-        dap.enable = true;
-      };
+      clang.enable = true;
       markdown.enable = true;
-      markdown.format.enable = true;
       typst = {
         enable = true;
-        lsp.enable = true;
-        treesitter.enable = true;
-        format.enable = true;
         extensions.typst-preview-nvim.enable = true;
       };
-      ruby = {
-        enable = true;
-        lsp = {
-          enable = true;
-          package = pkgs.rubyPackages.solargraph;
-        };
-        format.enable = true;
-      };
+      ruby.enable = true;
       r = {
         enable = true;
-        format = {
-          enable = true;
-          type = "styler";
-        };
+        format.type = "styler";
       };
     };
 
     # formatting
     formatter.conform-nvim = {
       enable = true;
-      setupOpts.formatters_by_ft = {
-        typst = ["typstyle"];
+      setupOpts = {
+        formatters_by_ft = {
+          typst = ["typstyle"];
+        };
+        formatters.typstyle.append_args = ["--wrap-text"];
       };
-      setupOpts.formatters.typstyle.append_args = ["--wrap-text"];
     };
 
     # debugging
