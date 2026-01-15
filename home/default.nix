@@ -6,7 +6,7 @@
     ./direnv.nix
     ./firefox.nix
     ./git.nix
-    ./home.nix
+    ./profile.nix
     ./theme
     ./nvf.nix
     ./packages.nix
