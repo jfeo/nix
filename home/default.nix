@@ -1,18 +1,14 @@
 {...}: {
   imports = [
-    ./alacritty.nix
-    ./bat.nix
-    ./firefox.nix
-    ./git.nix
-    ./profile.nix
-    ./theme
     ./nvf.nix
     ./packages.nix
+    ./profile.nix
+    ./programs
     ./rofi.nix
     ./services.nix
     ./shell
     ./sway
-    ./thunderbird.nix
+    ./theme
     ./waybar.nix
     ./xdg.nix
   ];
