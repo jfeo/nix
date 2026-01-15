@@ -17,7 +17,6 @@ in {
 
     window = {
       border = mkLiteral "3px";
-      border-radius = mkLiteral "10px";
       border-color = mkLiteral "@lavender";
       width = mkLiteral "40em";
       padding = mkLiteral "5px";
@@ -32,7 +31,6 @@ in {
     };
 
     element = {
-      border-radius = mkLiteral "5px";
       margin = mkLiteral "2px";
       padding = mkLiteral "5px";
     };

@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     # desktop environment
-    hyprpolkitagent
-    hypridle
-    hyprlock
+    grim # screenshot tool
+    slurp # screen area selector
+    wlsunset # blue light filter
     wev
     nwg-look
     nwg-displays
@@ -11,7 +11,6 @@
     dunst
     rofi-power-menu
     rofi-file-browser
-    grimblast
     catppuccin-gtk
     catppuccin-cursors.mochaDark
     playerctl
@@ -55,12 +54,12 @@
     protonvpn-gui
 
     # file management and viewers
-    xfce.thunar
-    xfce.thunar-volman
-    xfce.thunar-archive-plugin
-    xfce.thunar-media-tags-plugin
-    xfce.tumbler # thumbnails
-    xfce.catfish
+    thunar
+    thunar-volman
+    thunar-archive-plugin
+    thunar-media-tags-plugin
+    tumbler # thumbnails
+    catfish
     kdePackages.okular
     qimgv
 

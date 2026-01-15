@@ -1,6 +1,8 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: Noto Sans, sans-serif;
+  font-family:
+    Noto Sans,
+    sans-serif;
   font-size: 16px;
   margin: 0;
   padding: 0;
@@ -14,8 +16,7 @@ window#waybar {
 .modules-left,
 .modules-center,
 .modules-right {
-  border-radius: 5px;
-  margin: 5px;
+  margin: 5px 5px 0px;
   border: 2px solid @text;
   background-color: @base;
 }
@@ -38,7 +39,7 @@ window#waybar {
 #battery.warning:not(.charging) {
   color: @red;
   animation-name: blink;
-  animation-duration: 1.0s;
+  animation-duration: 1s;
   animation-timing-function: steps(48);
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -68,12 +69,12 @@ window#waybar {
   color: @text;
 }
 
-#expand>*:not(last-child) {
+#expand > *:not(last-child) {
   margin-right: 10px;
 }
 
-#clock {}
-
+#clock {
+}
 
 #power-profiles-daemon.power-saver {
   color: @green;
@@ -99,12 +100,13 @@ window#waybar.empty .modules-center {
 
 #workspaces button {
   border-radius: 0;
+  border-bottom: 2px solid @overlay1;
   padding: 0 5px;
   margin: 0;
   color: @text;
 }
 
-#workspaces button.empty {
+#workspaces button.persitent {
   color: @overlay1;
 }
 
@@ -114,7 +116,7 @@ window#waybar.empty .modules-center {
   font-weight: bold;
 }
 
-#workspaces button.active {
+#workspaces button.focused {
   background-color: @text;
   color: @base;
   font-weight: bold;
@@ -124,10 +126,14 @@ window#waybar.empty .modules-center {
   background-color: @red;
   font-weight: bold;
   animation-name: blink;
-  animation-duration: 1.0s;
+  animation-duration: 1s;
   animation-timing-function: steps(48);
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+#workspaces button.current_output {
+  border-bottom: 2px solid @mauve;
 }
 
 .pavu-muted {

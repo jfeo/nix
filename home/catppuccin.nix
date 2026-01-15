@@ -11,8 +11,8 @@
 
   home.pointerCursor = {
     enable = true;
-    name = "Catpuccin Mocha Dark";
+    name = "catppuccin-mocha-dark-cursors";
     package = pkgs.catppuccin-cursors.mochaDark;
-    size = 24;
+    size = 22;
   };
 }

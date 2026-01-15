@@ -1,4 +1,4 @@
-{...}: let
+_: let
   catppuccin-mocha-red = "#f38ba8";
   catppuccin-mocha-overlay2 = "#9399b2";
 in {
@@ -14,9 +14,10 @@ in {
       position = "top";
       reload_style_on_change = true;
       modules-left = [
-        "hyprland/workspaces"
+        "sway/workspaces"
+        "sway/mode"
       ];
-      modules-center = ["hyprland/window"];
+      modules-center = ["sway/window"];
       modules-right = [
         "group/expand"
         "tray"
@@ -31,24 +32,29 @@ in {
       ];
 
       # Module Configurations
-      "hyprland/workspaces" = {
+      "sway/workspaces" = {
+        all-outputs = true;
         format = "{name} <span rise=\"1.5pt\">{icon}</span>";
         format-icons = {
           default = "◉︎";
-          empty = "○︎";
+          persistent = "○︎";
         };
+        disable_scroll = true;
         persistent-workspaces = {
-          "*" = [
-            1
-            2
-            3
-            4
-            5
-          ];
+          "1" = [];
+          "2" = [];
+          "3" = [];
+          "4" = [];
+          "5" = [];
         };
       };
 
-      "hyprland/window" = {
+      "sway/mode" = {
+        format = "  {}";
+        max-length = 50;
+      };
+
+      "sway/window" = {
         separate-outputs = true;
       };
 
@@ -141,16 +147,16 @@ in {
       };
 
       "custom/sunset" = {
-        exec = "hyprctl hyprsunset temperature | jq --unbuffered --compact-output -Rn '{alt: input}'";
+        exec = "pgrep wlsunset > /dev/null && echo '{\"alt\":\"on\"}' || echo '{\"alt\":\"off\"}'";
         format = "{icon}";
         return-type = "json";
         format-icons = {
-          "4000" = "";
-          default = "";
+          "on" = "";
+          "off" = "";
         };
         tooltip-format = "Blue light filter";
         interval = "once";
-        on-click = "hyprctl hyprsunset temperature | grep -q 4000 && hyprctl hyprsunset temperature 6500 || hyprctl hyprsunset temperature 4000; pkill -SIGRTMIN+8 waybar";
+        on-click = "pgrep wlsunset > /dev/null && pkill wlsunset || (wlsunset -t 4000 &); pkill -SIGRTMIN+8 waybar";
         signal = 8;
       };
 
@@ -177,17 +183,18 @@ in {
       };
 
       cpu = {
-        format = "󰻠";
+        format = "{usage:>2}% ";
         tooltip = true;
       };
 
       memory = {
-        format = "";
+        format = "{percentage}% ";
+        tooltip-format = "{used:0.1f}GiB/{total:0.1f}GiB\n\nSwap:\n{swapUsed:0.1f}GiB/{swapTotal:0.1f}GiB";
       };
 
       temperature = {
         critical-threshold = 80;
-        rmat = "";
+        format = "{temperatureC}°C ";
       };
 
       tray = {

@@ -130,7 +130,7 @@
         ruby.enable = true;
         r = {
           enable = true;
-          format.type = "styler";
+          format.type = ["styler"];
         };
       };
 
