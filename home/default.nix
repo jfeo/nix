@@ -3,12 +3,11 @@
     ./alacritty.nix
     ./bash.nix
     ./bat.nix
-    ./catppuccin.nix
     ./direnv.nix
     ./firefox.nix
     ./git.nix
-    ./gtk.nix
     ./home.nix
+    ./theme
     ./nvf.nix
     ./packages.nix
     ./rofi.nix
