@@ -14,9 +14,7 @@
     ./rofi.nix
     ./services.nix
     ./starship.nix
-    ./sway.nix
-    ./swayidle.nix
-    ./swaylock.nix
+    ./sway
     ./thunderbird.nix
     ./waybar.nix
     ./xdg.nix
