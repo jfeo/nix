@@ -117,7 +117,10 @@
         enableDAP = true;
         enableExtraDiagnostics = true;
         enableFormat = true;
-        nix.enable = true;
+        nix = {
+          enable = true;
+          lsp.options.settings.nil.diagnostics.ignored = ["empty_pattern"];
+        };
         bash.enable = true;
         css.enable = true;
         go.enable = true;
