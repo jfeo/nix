@@ -1,9 +1,7 @@
 {...}: {
   imports = [
     ./alacritty.nix
-    ./bash.nix
     ./bat.nix
-    ./direnv.nix
     ./firefox.nix
     ./git.nix
     ./profile.nix
@@ -12,7 +10,7 @@
     ./packages.nix
     ./rofi.nix
     ./services.nix
-    ./starship.nix
+    ./shell
     ./sway
     ./thunderbird.nix
     ./waybar.nix
