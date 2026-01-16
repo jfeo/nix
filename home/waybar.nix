@@ -1,4 +1,4 @@
-_: let
+{...}: let
   catppuccin-mocha-red = "#f38ba8";
   catppuccin-mocha-overlay2 = "#9399b2";
 in {
