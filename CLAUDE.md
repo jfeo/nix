@@ -49,14 +49,14 @@ All user-level configuration is split into focused modules in `home/`:
 ### Building and Activating Configuration
 
 ```bash
-# Rebuild system configuration (requires sudo)
-sudo nixos-rebuild switch --flake .#taenknix
+# Rebuild system configuration (uses pkexec for graphical auth prompt)
+pkexec nixos-rebuild switch --flake .#taenknix
 
 # Build without activating
-sudo nixos-rebuild build --flake .#taenknix
+pkexec nixos-rebuild build --flake .#taenknix
 
 # Test configuration (temporary, lost on reboot)
-sudo nixos-rebuild test --flake .#taenknix
+pkexec nixos-rebuild test --flake .#taenknix
 ```
 
 ### Updating Dependencies
@@ -97,7 +97,7 @@ home-manager switch --flake .#feo
 1. For user packages: Add to `home/packages.nix` in the `home.packages` list
 2. For system packages: Add to `configuration.nix` in
    `environment.systemPackages`
-3. Run `sudo nixos-rebuild switch --flake .#taenknix`
+3. Run `pkexec nixos-rebuild switch --flake .#taenknix`
 
 ### Creating New Home Modules
 
