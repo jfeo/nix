@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ./claude-code.nix
     ./nvf.nix
     ./packages.nix
     ./profile.nix
