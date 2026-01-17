@@ -100,7 +100,7 @@ window#waybar.empty .modules-center {
 
 #workspaces button {
   border-radius: 0;
-  border-bottom: 2px solid @overlay1;
+  border-bottom: 4px solid @base;
   padding: 0 5px;
   margin: 0;
   color: @text;
@@ -112,6 +112,7 @@ window#waybar.empty .modules-center {
 
 #workspaces button.visible {
   background-color: @overlay0;
+  border-bottom: 4px solid @overlay0;
   color: @base;
   font-weight: bold;
 }
@@ -133,7 +134,7 @@ window#waybar.empty .modules-center {
 }
 
 #workspaces button.current_output {
-  border-bottom: 2px solid @mauve;
+  border-bottom: 4px solid @mauve;
 }
 
 .pavu-muted {
