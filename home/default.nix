@@ -6,6 +6,7 @@
     ./profile.nix
     ./programs
     ./rofi.nix
+    ./scripts
     ./services.nix
     ./shell
     ./sway

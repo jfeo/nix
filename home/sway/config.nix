@@ -56,7 +56,6 @@
       # Keybindings
       keybindings = let
         mod = "Mod4";
-        screenshotPath = "~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png";
       in {
         # General
         "${mod}+Return" = "exec alacritty";
@@ -118,11 +117,10 @@
         "${mod}+Control+j" = "resize grow height 20px";
 
         # Screenshots
-        # TODO: refactor this
-        "Print" = "exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy && notify-send 'Screenshot copied to clipboard'";
-        "Shift+Print" = "exec grim -g \"$(slurp)\" - | wl-copy && notify-send 'Screenshot copied to clipboard'";
-        "${mod}+Print" = "exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') ${screenshotPath} && notify-send -i ${screenshotPath} \"Screenshot saved in ${screenshotPath}\"";
-        "${mod}+Shift+Print" = "exec grim -g \"$(slurp)\" ${screenshotPath} && notify-send -i ${screenshotPath} \"Screenshot saved in ${screenshotPath}\"";
+        "Print" = "exec screenshot";
+        "Shift+Print" = "exec screenshot --area";
+        "${mod}+Print" = "exec screenshot --save";
+        "${mod}+Shift+Print" = "exec screenshot --area --save";
 
         # Applications
         "${mod}+Alt+f" = "exec ${pkgs.firefox}/bin/firefox";

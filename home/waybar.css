@@ -152,3 +152,7 @@ window#waybar.empty .modules-center {
 .pavu-icon {
   margin-right: 3px;
 }
+
+#pulseaudio.bluetooth {
+  color: @blue;
+}

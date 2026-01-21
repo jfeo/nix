@@ -48,7 +48,7 @@ in {
     };
 
     entry = {
-      placeholder = "Run...";
+      placeholder = "Type to filter...";
     };
 
     scrollbar = {

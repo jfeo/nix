@@ -83,6 +83,7 @@ in {
             ""
           ];
         };
+        on-click-right = "rofi -display-run \"Output...\" -show rofi-sound -modi \"rofi-sound:rofi-sound-output-chooser\"";
         on-click = "pavucontrol";
         input = true;
       };
@@ -91,6 +92,7 @@ in {
         format = "{format_source}";
         format-source = "<span foreground='${catppuccin-mocha-red}'> {volume}%</span>";
         format-source-muted = "<span foreground='${catppuccin-mocha-overlay2}'></span>";
+        on-click-right = "rofi -show rofi-sound -modi \"rofi-sound:rofi-sound-input-chooser\"";
       };
 
       "custom/notification" = {
