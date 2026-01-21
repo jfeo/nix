@@ -22,6 +22,8 @@
   services.swayosd.enable = true;
   services.batsignal.enable = true;
   services.batsignal.extraArgs = [
+    "-I"
+    "battery"
     "-w"
     "20"
     "-c"
