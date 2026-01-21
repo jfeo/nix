@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  services.ssh-agent.enable = true;
   services.swaync.enable = true;
 
   # Polkit authentication agent for graphical sudo prompts (pkexec)
