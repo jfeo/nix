@@ -29,11 +29,14 @@ All user-level configuration is split into focused modules in `home/`:
 
 - **default.nix**: Imports all home modules (acts as a registry)
 - **nvf.nix**: Neovim configuration using nvf (NotAShelf/nvf framework)
-- **sway.nix**: Sway window manager settings (keybindings, monitors, appearance)
 - **packages.nix**: User-installed packages
-- Additional modules for alacritty, bash, bat, catppuccin theme, direnv,
-  firefox, git, gtk, rofi, services, starship, swayidle, swaylock, thunderbird,
-  waybar, xdg
+- **claude-code.nix**: Claude Code CLI configuration
+- **sway/**: Sway window manager (config.nix, idle.nix, lock.nix)
+- **programs/**: Application configs (alacritty, bat, firefox, git, thunderbird)
+- **shell/**: Shell environment (bash, direnv, starship)
+- **theme/**: Visual theming (catppuccin, gtk, qt, cursor)
+- **scripts/**: Custom shell scripts (screenshot, audio device choosers)
+- Additional modules: rofi, services, waybar, xdg
 
 ### Custom Packages
 
@@ -101,9 +104,16 @@ home-manager switch --flake .#feo
 
 ### Creating New Home Modules
 
-1. Create new `.nix` file in `home/` directory
-2. Add import to `home/default.nix`
-3. Follow existing module patterns (take inputs like `{pkgs, ...}`)
+1. Create new `.nix` file in appropriate location:
+   - `home/programs/` for application configurations
+   - `home/shell/` for shell-related settings
+   - `home/theme/` for theming modules
+   - `home/scripts/` for custom scripts
+   - `home/` root for standalone modules
+2. If creating a directory module, add `default.nix` that imports other files
+3. Add import to `home/default.nix` (or the appropriate subdirectory's
+   `default.nix`)
+4. Follow existing module patterns (take inputs like `{pkgs, ...}`)
 
 ### Modifying Nvf Configuration
 
@@ -122,6 +132,21 @@ structured sections:
 
 Leader key is set to `,` (comma).
 
+### Custom Scripts
+
+The `home/scripts/` module provides custom shell scripts packaged with
+`writeShellApplication`:
+
+- **screenshot**: Screenshot utility using grim/slurp with clipboard support
+- **rofi-sound-output-chooser**: Select audio output device via rofi menu
+- **rofi-sound-input-chooser**: Select audio input device via rofi menu
+
+To add a new script:
+
+1. Create `.sh` file in `home/scripts/`
+2. Add a `writeShellApplication` block in `home/scripts/default.nix`
+3. Add the script to `home.packages` in the same file
+
 ### Working with Custom Fonts
 
 When adding the Berkeley Mono Nerd Font:
@@ -137,7 +162,7 @@ When adding the Berkeley Mono Nerd Font:
 ### Desktop Environment
 
 - Display manager: SDDM (Wayland mode with Catppuccin theme)
-- Window manager: Sway (configured in `home/sway.nix`)
+- Window manager: Sway (configured in `home/sway/`)
 - Primary monitor: eDP-1 (1920x1200@60)
 - Office monitors: Dell P2416D (left), Microstep MSI MP273A (top)
 - Modifier key: SUPER (Windows key)
