@@ -1,6 +1,14 @@
 {pkgs, ...}: {
-  services.ssh-agent.enable = true;
-  services.swaync.enable = true;
+  services = {
+    batsignal = {
+      enable = true;
+      extraArgs = ["-I" "battery" "-w" "20" "-c" "10" "-d" "5" "-p" "-m" "2"];
+    };
+    blueman-applet.enable = true;
+    ssh-agent.enable = true;
+    swaync.enable = true;
+    swayosd.enable = true;
+  };
 
   # Polkit authentication agent for graphical sudo prompts (pkexec)
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
@@ -18,20 +26,4 @@
     };
     Install.WantedBy = ["graphical-session.target"];
   };
-  services.blueman-applet.enable = true;
-  services.swayosd.enable = true;
-  services.batsignal.enable = true;
-  services.batsignal.extraArgs = [
-    "-I"
-    "battery"
-    "-w"
-    "20"
-    "-c"
-    "10"
-    "-d"
-    "5"
-    "-p"
-    "-m"
-    "2"
-  ];
 }
