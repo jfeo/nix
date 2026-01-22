@@ -21,6 +21,7 @@ in {
       modules-right = [
         "group/expand"
         "tray"
+        "idle_inhibitor"
         "custom/sunset"
         "pulseaudio#audio"
         "pulseaudio#source"
@@ -160,6 +161,17 @@ in {
         interval = "once";
         on-click = "pgrep wlsunset > /dev/null && pkill wlsunset || (wlsunset -t 4000 &); pkill -SIGRTMIN+8 waybar";
         signal = 8;
+      };
+
+      "idle_inhibitor" = {
+        format = "{icon}";
+        format-icons = {
+          activated = "";
+          deactivated = "";
+        };
+        timeout = 30.5;
+        tooltip-format-activated = "Idle inhibitor activated";
+        tooltip-format-deactivated = "Idle inhibitor deactivated";
       };
 
       "custom/power" = {
