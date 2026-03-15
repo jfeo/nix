@@ -1,8 +1,10 @@
 {pkgs, ...}: {
   wayland.windowManager.sway = {
     enable = true;
+    package = pkgs.swayfx;
     xwayland = true;
     systemd.enable = true;
+    checkConfig = false;
 
     config = {
       modifier = "Mod4"; # Super key
