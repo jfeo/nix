@@ -62,6 +62,7 @@
     catfish
     kdePackages.okular
     qimgv
+    calibre
 
     # editing and office software
     obsidian
