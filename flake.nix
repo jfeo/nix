@@ -23,12 +23,17 @@
     home-manager,
     ...
   } @ inputs: {
-    nixosConfigurations.taenknix = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./configuration.nix
-        home-manager.nixosModules.default
-      ];
+    nixosConfigurations = {
+      taenknix = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./configuration.nix
+          home-manager.nixosModules.default
+        ];
+      };
+      feoserv = nixpkgs.lib.nixosSystem {
+        modules = [ ./feoserv/configuration.nix ];
+      };
     };
   };
 }
