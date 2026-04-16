@@ -1,14 +1,11 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, lib, pkgs, ... }:
-
-{
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+{pkgs, ...}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   boot = {
     loader = {
@@ -22,8 +19,8 @@
   networking = {
     hostName = "feoserv";
     firewall = {
-      allowedTCPPorts = [ 22 80 443 ];
-      allowedUDPPorts = [  ];
+      allowedTCPPorts = [22 80 443];
+      allowedUDPPorts = [];
     };
     networkmanager.enable = true;
   };
@@ -40,9 +37,9 @@
     users.feo = {
       uid = 1000;
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "docker" ];
+      extraGroups = ["wheel" "networkmanager" "docker"];
       hashedPassword = "$y$j9T$ZveFkD0w8uhuStn7pSKny1$tx4NXiSvn9oKMdE66SYoeZvihMEHr.zOUyg4I9Z4nF1";
-      packages = with pkgs; [ ];
+      packages = with pkgs; [];
     };
   };
 
@@ -121,5 +118,3 @@
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.11"; # Did you read the comment?
 }
-
-# vim: ts=2 sw=2 et
