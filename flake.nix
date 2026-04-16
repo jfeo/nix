@@ -27,12 +27,12 @@
       taenknix = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
-          ./configuration.nix
+          ./taenknix/configuration.nix
           home-manager.nixosModules.default
         ];
       };
       feoserv = nixpkgs.lib.nixosSystem {
-        modules = [ ./feoserv/configuration.nix ];
+        modules = [./feoserv/configuration.nix];
       };
     };
   };
