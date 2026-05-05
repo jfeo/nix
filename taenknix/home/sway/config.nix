@@ -134,7 +134,9 @@
         "XF86AudioRaiseVolume" = "exec swayosd-client --max-volume 150 --output-volume +5";
         "XF86AudioLowerVolume" = "exec swayosd-client --max-volume 150 --output-volume -5";
         "XF86AudioMute" = "exec swayosd-client --output-volume mute-toggle";
-        "XF86AudioMicMute" = "exec sh -c 'swayosd-client --input-volume mute-toggle; micStatus=$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -c MUTED); brightnessctl -d platform::micmute set $micStatus'";
+        # TODO: workaround while swayosd-client --input-volume mute-toggle does
+        # not work see: https://github.com/ErikReider/SwayOSD/issues/225
+        "XF86AudioMicMute" = ''exec sh -c 'wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && (wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q MUTED && swayosd-client --custom-message "Microphone" --custom-icon "source-volume-muted-symbolic" || swayosd-client --custom-message "Microphone" --custom-icon "source-volume-high-symbolic")' '';
         "XF86AudioPlay" = "exec swayosd-client --playerctl=play-pause";
         "XF86AudioPause" = "exec swayosd-client --playerctl=play-pause";
         "XF86AudioNext" = "exec swayosd-client --playerctl=next";
