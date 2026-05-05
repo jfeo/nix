@@ -18,6 +18,7 @@
     pavucontrol
     awww
     wl-color-picker
+    solaar # manage logitech devices
 
     google-chrome
     vlc

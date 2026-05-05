@@ -93,6 +93,7 @@
 
   # other
   hardware.bluetooth.enable = true;
+  hardware.logitech.wireless.enable = true; # logitech wireless receiver
   services.blueman.enable = true;
   services.printing.enable = true;
   services.power-profiles-daemon.enable = true;
