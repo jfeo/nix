@@ -9,6 +9,7 @@
     config = {
       modifier = "Mod4"; # Super key
       terminal = "alacritty";
+      defaultWorkspace = "1";
 
       # Output (monitor) configuration
       output = {
