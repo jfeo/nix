@@ -115,7 +115,6 @@
       languages = {
         enableTreesitter = true;
         enableDAP = true;
-        enableExtraDiagnostics = true;
         enableFormat = true;
         nix.enable = true;
         bash.enable = true;
