@@ -16,7 +16,7 @@
     playerctl
     brightnessctl
     pavucontrol
-    swww
+    awww
     wl-color-picker
 
     google-chrome
@@ -51,7 +51,7 @@
     qbittorrent
 
     # networking
-    protonvpn-gui
+    proton-vpn
 
     # file management and viewers
     thunar

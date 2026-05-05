@@ -5,17 +5,22 @@
 }: let
   accent = "rosewater";
 in {
-  gtk.enable = true;
-  gtk.theme = {
-    name = "catppuccin-mocha-${accent}-compact+rimless";
-    package = pkgs.catppuccin-gtk.override {
-      variant = "mocha";
-      accents = ["${accent}"];
-      size = "compact";
-      tweaks = [
-        "rimless"
-      ];
+  gtk = {
+    enable = true;
+    theme = {
+      name = "catppuccin-mocha-${accent}-compact+rimless";
+      package = pkgs.catppuccin-gtk.override {
+        variant = "mocha";
+        accents = ["${accent}"];
+        size = "compact";
+        tweaks = [
+          "rimless"
+        ];
+      };
     };
+
+    # TODO: added to preserve previous default
+    gtk4.theme = config.gtk.theme;
   };
 
   # Now symlink the `~/.config/gtk-4.0/` folder declaratively:
