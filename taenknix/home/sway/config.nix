@@ -130,6 +130,7 @@
         "${mod}+Alt+o" = "exec ${pkgs.obsidian}/bin/obsidian";
         "${mod}+r" = "exec pkill rofi || ${pkgs.rofi}/bin/rofi -show drun";
         "${mod}+Shift+r" = "exec pkill rofi || ${pkgs.rofi}/bin/rofi -show run";
+        "${mod}+o" = "exec pkill rofi || rofi-file-browser";
 
         # Media keys
         "XF86AudioRaiseVolume" = "exec swayosd-client --max-volume 150 --output-volume +5";

@@ -16,6 +16,12 @@
     runtimeInputs = with pkgs; [pulseaudioFull libnotify];
     text = builtins.readFile ./rofi-sound-input-chooser.sh;
   };
+
+  rofi-file-browser = pkgs.writeShellApplication {
+    name = "rofi-file-browser";
+    runtimeInputs = with pkgs; [fd rofi xdg-utils];
+    text = builtins.readFile ./rofi-file-browser.sh;
+  };
 in {
-  home.packages = [screenshot rofi-sound-output-chooser rofi-sound-input-chooser];
+  home.packages = [screenshot rofi-sound-output-chooser rofi-sound-input-chooser rofi-file-browser];
 }
