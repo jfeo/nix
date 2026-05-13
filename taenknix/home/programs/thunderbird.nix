@@ -1,11 +1,11 @@
 {...}: {
   programs.thunderbird.enable = true;
 
-  programs.thunderbird.profiles.personal = {
+  programs.thunderbird.profiles."jens@feodor.dk" = {
     isDefault = true;
   };
 
-  accounts.email.accounts.personal = {
+  accounts.email.accounts."jens@feodor.dk" = {
     thunderbird.enable = true;
     primary = true;
     address = "jens@feodor.dk";
