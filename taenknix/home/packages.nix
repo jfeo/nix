@@ -31,7 +31,7 @@
     manix # nix help/docs
 
     # cli utils
-    silver-searcher
+    silver-searcher-ng
     starship
     jq
     file

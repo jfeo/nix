@@ -206,15 +206,14 @@
           silent = true;
           desc = "Create terminal vertically";
         }
-      ];
-
-      maps.terminal = {
-        "<Esc>" = {
+        {
+          key = "<Esc>";
+          mode = "t";
           action = "<C-\\><C-n>";
           silent = true;
           desc = "Escape terminal mode";
-        };
-      };
+        }
+      ];
 
       # -----------------------------------------
       # Highligh active window

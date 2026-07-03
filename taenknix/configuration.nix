@@ -58,6 +58,8 @@
   services.xserver.xkb.layout = "dk";
 
   # desktop environment
+  catppuccin.enable = true;
+  catppuccin.autoEnable = false;
   catppuccin.sddm.enable = true;
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
