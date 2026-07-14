@@ -22,5 +22,8 @@
       port = 993;
       tls.enable = true;
     };
+    thunderbird.settings = id: {
+      "mail.identity.id_${id}.fcc_folder" = "imap://jens%40feodor.dk@imap.one.com/Sent";
+    };
   };
 }
