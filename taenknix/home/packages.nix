@@ -73,6 +73,9 @@
     libreoffice
     scribus
 
+    # music software
+    tuxguitar
+
     # rpi
     rpi-imager
   ];
