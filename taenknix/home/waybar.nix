@@ -1,4 +1,4 @@
-{...}: let
+{lib, ...}: let
   catppuccin-mocha-red = "#f38ba8";
   catppuccin-mocha-overlay2 = "#9399b2";
 in {
@@ -35,19 +35,24 @@ in {
       # Module Configurations
       "sway/workspaces" = {
         all-outputs = true;
-        format = "{name} <span rise=\"1.5pt\">{icon}</span>";
-        format-icons = {
-          default = "◉︎";
-          persistent = "○︎";
-        };
+        format = "{icon}";
+        format-icons = builtins.listToAttrs (builtins.concatLists (builtins.map ({
+          group,
+          workspaces,
+        }:
+          builtins.map (workspace: {
+            name = "${toString group}${toString workspace}";
+            value = "${toString group}:${toString workspace}";
+          })
+          workspaces) (
+          builtins.map (group: {
+            workspaces = [1 2 3 4 5 6 7 8 9 0];
+            group = group;
+          })
+          [1 2 3 4 5 6 7 8 9 0]
+        )));
         disable_scroll = true;
-        persistent-workspaces = {
-          "1" = [];
-          "2" = [];
-          "3" = [];
-          "4" = [];
-          "5" = [];
-        };
+        persistent-workspaces = {};
       };
 
       "sway/mode" = {

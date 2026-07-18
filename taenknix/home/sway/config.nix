@@ -1,4 +1,7 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  swaysome-bin = "${pkgs.swaysome}/bin/swaysome";
+  exec-swaysome = cmd: "exec \"${swaysome-bin} ${cmd}\"";
+in {
   wayland.windowManager.sway = {
     enable = true;
     package = pkgs.swayfx;
@@ -54,6 +57,9 @@
           command = "${pkgs.swaybg}/bin/swaybg -i /home/feo/Downloads/IMG_20250814_172041_rotated.jpg -m fill";
           always = true;
         }
+        {
+          command = "${swaysome-bin} init 1";
+        }
       ];
 
       # Keybindings
@@ -79,29 +85,53 @@
         "${mod}+tab" = "workspace back_and_forth";
         "${mod}+f" = "fullscreen toggle";
 
-        # Workspaces
-        "${mod}+1" = "workspace number 1";
-        "${mod}+2" = "workspace number 2";
-        "${mod}+3" = "workspace number 3";
-        "${mod}+4" = "workspace number 4";
-        "${mod}+5" = "workspace number 5";
-        "${mod}+6" = "workspace number 6";
-        "${mod}+7" = "workspace number 7";
-        "${mod}+8" = "workspace number 8";
-        "${mod}+9" = "workspace number 9";
-        "${mod}+0" = "workspace number 10";
+        # Change focus between workspaces
+        "${mod}+1" = exec-swaysome "focus 1";
+        "${mod}+2" = exec-swaysome "focus 2";
+        "${mod}+3" = exec-swaysome "focus 3";
+        "${mod}+4" = exec-swaysome "focus 4";
+        "${mod}+5" = exec-swaysome "focus 5";
+        "${mod}+6" = exec-swaysome "focus 6";
+        "${mod}+7" = exec-swaysome "focus 7";
+        "${mod}+8" = exec-swaysome "focus 8";
+        "${mod}+9" = exec-swaysome "focus 9";
+        "${mod}+0" = exec-swaysome "focus 0";
 
-        # Move to workspaces
-        "${mod}+Shift+1" = "move container to workspace number 1";
-        "${mod}+Shift+2" = "move container to workspace number 2";
-        "${mod}+Shift+3" = "move container to workspace number 3";
-        "${mod}+Shift+4" = "move container to workspace number 4";
-        "${mod}+Shift+5" = "move container to workspace number 5";
-        "${mod}+Shift+6" = "move container to workspace number 6";
-        "${mod}+Shift+7" = "move container to workspace number 7";
-        "${mod}+Shift+8" = "move container to workspace number 8";
-        "${mod}+Shift+9" = "move container to workspace number 9";
-        "${mod}+Shift+0" = "move container to workspace number 10";
+        # Move container between workspaces
+        "${mod}+Shift+1" = exec-swaysome "move 1";
+        "${mod}+Shift+2" = exec-swaysome "move 2";
+        "${mod}+Shift+3" = exec-swaysome "move 3";
+        "${mod}+Shift+4" = exec-swaysome "move 4";
+        "${mod}+Shift+5" = exec-swaysome "move 5";
+        "${mod}+Shift+6" = exec-swaysome "move 6";
+        "${mod}+Shift+7" = exec-swaysome "move 7";
+        "${mod}+Shift+8" = exec-swaysome "move 8";
+        "${mod}+Shift+9" = exec-swaysome "move 9";
+        "${mod}+Shift+0" = exec-swaysome "move 0";
+
+        # Focus workspace groups
+        "${mod}+Alt+1" = exec-swaysome "focus-group 1";
+        "${mod}+Alt+2" = exec-swaysome "focus-group 2";
+        "${mod}+Alt+3" = exec-swaysome "focus-group 3";
+        "${mod}+Alt+4" = exec-swaysome "focus-group 4";
+        "${mod}+Alt+5" = exec-swaysome "focus-group 5";
+        "${mod}+Alt+6" = exec-swaysome "focus-group 6";
+        "${mod}+Alt+7" = exec-swaysome "focus-group 7";
+        "${mod}+Alt+8" = exec-swaysome "focus-group 8";
+        "${mod}+Alt+9" = exec-swaysome "focus-group 9";
+        "${mod}+Alt+0" = exec-swaysome "focus-group 0";
+
+        # Move containers to other workspace groups
+        "${mod}+Alt+Shift+1" = exec-swaysome "move-to-group 1";
+        "${mod}+Alt+Shift+2" = exec-swaysome "move-to-group 2";
+        "${mod}+Alt+Shift+3" = exec-swaysome "move-to-group 3";
+        "${mod}+Alt+Shift+4" = exec-swaysome "move-to-group 4";
+        "${mod}+Alt+Shift+5" = exec-swaysome "move-to-group 5";
+        "${mod}+Alt+Shift+6" = exec-swaysome "move-to-group 6";
+        "${mod}+Alt+Shift+7" = exec-swaysome "move-to-group 7";
+        "${mod}+Alt+Shift+8" = exec-swaysome "move-to-group 8";
+        "${mod}+Alt+Shift+9" = exec-swaysome "move-to-group 9";
+        "${mod}+Alt+Shift+0" = exec-swaysome "move-to-group 0";
 
         # Navigation
         "${mod}+h" = "focus left";
@@ -112,6 +142,8 @@
         "${mod}+Shift+l" = "move right";
         "${mod}+Shift+k" = "move up";
         "${mod}+Shift+j" = "move down";
+        "${mod}+Shift+o" = exec-swaysome "next-output";
+        "${mod}+Alt+o" = exec-swaysome "prev-output";
 
         # Resize
         "${mod}+Control+h" = "resize shrink width 20px";
@@ -126,8 +158,6 @@
         "${mod}+Shift+Print" = "exec screenshot --area --save";
 
         # Applications
-        "${mod}+Alt+f" = "exec ${pkgs.firefox}/bin/firefox";
-        "${mod}+Alt+o" = "exec ${pkgs.obsidian}/bin/obsidian";
         "${mod}+r" = "exec pkill rofi || ${pkgs.rofi}/bin/rofi -show drun";
         "${mod}+Shift+r" = "exec pkill rofi || ${pkgs.rofi}/bin/rofi -show run";
         "${mod}+o" = "exec pkill rofi || rofi-file-browser";
