@@ -3,6 +3,7 @@
 
   programs.thunderbird.profiles."jens@feodor.dk" = {
     isDefault = true;
+    settings."extensions.autoDisableScopes" = 0;
   };
 
   accounts.email.accounts."jens@feodor.dk" = {
